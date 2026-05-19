@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <title>Enrollment</title>
+</head>
+<body>
+    <div class="header">
+        <ul id="menu">
+            <li><a href="student.html">Student</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li style="background-color: rgb(14, 14, 14)"><a href="enroll.html">Enrollment</a></li>
+            <li id="Logout"><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+    
+    <div class="container1">
+        <h3>Enroll Student in Course</h3>
+        <div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="sid">Student :</label>
+                </div>
+                <div class="col-2">
+                    <select id="sid" name="sid">
+                        <option value="">Loading students...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="cid">Course :</label>
+                </div>
+                <div class="col-2">
+                    <select id="cid" name="cid">
+                        <option value="">Loading courses...</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button id="button-add" onclick="addEnrollment()">Enroll</button>
+            </div>
+        </div>
+    </div>
+    
+    <hr width="65%">
+    
+    <div class="container2">
+        <h3>Enrolled Students</h3>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Date Enrolled</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="js/enroll.js"></script>
+    <script src="js/auth.js"></script>
+    
+    <!-- ADD THIS LOGOUT SCRIPT -->
+    <script>
+    function logout() {
+        console.log("Logout button clicked");
+        if (confirm("Are you sure you want to logout?")) {
+            fetch('/logout', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "login.html";
+                } else {
+                    alert("Logout failed");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Network error during logout");
+            });
+        }
+    }
+    </script>
+</body>
+</html>
+</body>
+</html>

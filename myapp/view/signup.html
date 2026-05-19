@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <title>Sign Up</title>
+    <style>
+        .signup-container {
+            width: 40%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgb(169, 169, 178);
+            border-radius: 20px;
+        }
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .signup-container button {
+            width: 100%;
+            margin-left: 0;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link a {
+            color: rgb(10, 10, 69);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Create Admin Account</h2>
+        <div class="row">
+            <div class="col-1">
+                <label>First Name:</label>
+            </div>
+            <div class="col-2">
+                <input type="text" id="firstname" placeholder="Enter first name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Last Name:</label>
+            </div>
+            <div class="col-2">
+                <input type="text" id="lastname" placeholder="Enter last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Email:</label>
+            </div>
+            <div class="col-2">
+                <input type="email" id="email" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Password:</label>
+            </div>
+            <div class="col-2">
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Confirm Password:</label>
+            </div>
+            <div class="col-2">
+                <input type="password" id="confirm_password" placeholder="Confirm password">
+            </div>
+        </div>
+        <br>
+        <button onclick="signup()">Sign Up</button>
+        <div class="login-link">
+            <a href="login.html">Already have an account? Login Here</a>
+        </div>
+    </div>
+    
+    <script src="js/signup.js"></script>
+</body>
+</html>
